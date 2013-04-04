@@ -3,8 +3,21 @@ US Driver's License Regex Repository
 
 Below is a callback function for validating a dl field using CodeIgniter's `form_validation->set_rules()` function. If you are just interested in the array itself, feel free to copy and paste into your own code.
 
-    //validation for the format of a driver's license
-    //list as of 2012 US Driver's Licenses formats
+    /********************************************************
+     * @DESCRIPTION: validation for the format of a driver's 
+     *   license list as of 2012 US Driver's Licenses formats
+     * @author: Adam Bullmer
+     * @date: 04/04/2013
+     * 
+     * @PARAM: $string, automatic input from form_validation()
+     * @EXPECTED-INPUT: alpha-numeric, trimmed
+     * 
+     * @REQUIREMENTS: It is required to validate the DL State 
+     * field FIRST in order for us to choose which regex rules
+     * we will use. 
+     * @FIELD: 'dl_state'
+     * @FIELD-VALUE: 2 uppercase character state abbreviation
+     ********************************************************/
     public function dl_format($string) {
       $dlformat = array(
         'AL'=>"^[0-9]{1,7}$", //1-7Numbers
