@@ -5,8 +5,7 @@ Below is a callback function for validating a dl field using CodeIgniter's `form
 
     //validation for the format of a driver's license
     //list as of 2012 US Driver's Licenses formats
-    public function dl_format($string)
-    {
+    public function dl_format($string) {
       $dlformat = array(
         'AL'=>"^[0-9]{1,7}$", //1-7Numbers
         'AK'=>"^[0-9]{1,7}$", //1-7Numbers
@@ -61,12 +60,10 @@ Below is a callback function for validating a dl field using CodeIgniter's `form
         'WY'=>"^[0-9]{9,10}$", //9-10Numeric
       );
 		
-		if (!preg_match('/'.$dlformat[$this->input->post('dlstate')].'/', $string))
-		{
-			$this->form_validation->set_message('dl_format', 'That does not appear to be a valid Driver\'s License');
-			return FALSE;
-		}
-		else
-			return TRUE;
-		
-	}
+      if (!preg_match('/'.$dlformat[$this->input->post('dlstate')].'/', $string)) {
+        $this->form_validation->set_message('dl_format', 'That does not appear to be a valid Driver\'s License');
+        return FALSE;
+      }
+      else
+        return TRUE;
+    }
