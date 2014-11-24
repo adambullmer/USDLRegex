@@ -36,7 +36,7 @@ Below is a callback function for validating a dl field using CodeIgniter's `form
         'IL'=>"^[a-zA-Z][0-9]{11}$", //1Alpha+11Numeric
         'IN'=>"^[0-9]{10}$", //10Numeric
         'IA'=>"^[0-9]{9}$", //9Numeric
-        'KS'=>"^K[0-9]{8}$", //K+8Numeric
+        'KS'=>"^K[0-9]{8}$", //'K'+8Numeric
         'KY'=>"^[a-zA-Z0-9][0-9]{8}$", //1AlphaNumeric+8Numeric
         'LA'=>"^0[0-9]{8}$", //'0'+8Numeric
         'ME'=>"^[0-9]{7}$", //7Numeric
