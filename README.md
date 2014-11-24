@@ -67,7 +67,7 @@ Below is a callback function for validating a dl field using CodeIgniter's `form
         'UT'=>"^[0-9]{4,10}$", //4-10Numeric
         'VT'=>"(^[0-9]{8}$)|(^[0-9]{7}[A]$)", //8Numeric or 7Numeric+A
         'VA'=>"(^[a-zA-Z]{1}[0-9]{9,11}$)|(^[0-9]{9}$)", //1Alpha+9-11Numeric or 9Numeric
-        'WA'=>"^(?=.{12}$)[a-zA-Z]{1,7}[a-zA-Z0-9\*]{4,11}$", //1-7Alpha+any combination of Alpha, Numeric, or * for a total of 12 characters
+        'WA'=>"^[a-zA-Z]{1}[a-zA-Z0-9\*]{11}$", //1Alpha+11(Alpha, Numeric, or *)
         'WV'=>"(^[0-9]{7}$)|(^[a-zA-Z]{1,2}[0-9]{5,6}$)", //7Numeric or 1-2Alpha+5-6Numeric
         'WI'=>"^[a-zA-Z]{1}[0-9]{13}$", //1Alpha+13Numeric
         'WY'=>"^[0-9]{9,10}$", //9-10Numeric
