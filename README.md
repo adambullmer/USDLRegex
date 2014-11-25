@@ -63,7 +63,7 @@ Below is a callback function for validating a dl field using CodeIgniter's `form
         'SC'=>"^[0-9]{11}$", //11Numeric
         'SD'=>"^[0-9]{6,9}$", //6-9Numeric
         'TN'=>"^[0-9]{7,9}$", //7-9Numeric
-        'TX'=>"^[0-9]{7,8}$", //7-8Numeric
+        'TX'=>"^[0-9]{8}$", //8Numeric
         'UT'=>"^[0-9]{4,10}$", //4-10Numeric
         'VT'=>"^[0-9]{7}[0-9a-zA-Z]$", //7Numeric+1AlphaNumeric
         'VA'=>"^[a-zA-Z0-9][0-9]{8}$", //1AlphaNumeric+8Numeric
