@@ -194,27 +194,27 @@ class LicenseValidatorSpec extends Specification{
 
 
 
-        "OR"    | "123456"        | false
-        "OR"    | "1234567"       | true
-        "OR"    | "12345678"      | false
-        "OR"    | "A12345"        | false
-        "OR"    | "A123456"       | true
-        "OR"    | "A1234567"      | false
-        "OR"    | "AB12345"       | false
-        "OR"    | "AB123456"      | false
-        "OR"    | "AB1234567"     | false
-        "OR"    | "ABCDEFG"       | false
+        "OR"    | "123456"              | false
+        "OR"    | "1234567"             | true
+        "OR"    | "12345678"            | false
+        "OR"    | "A12345"              | false
+        "OR"    | "A123456"             | true
+        "OR"    | "A1234567"            | false
+        "OR"    | "AB12345"             | false
+        "OR"    | "AB123456"            | false
+        "OR"    | "AB1234567"           | false
+        "OR"    | "ABCDEFG"             | false
 
-        "RI"    | "123456"        | false
-        "RI"    | "1234567"       | true
-        "RI"    | "12345678"      | false
-        "RI"    | "A12345"        | false
-        "RI"    | "A123456"       | true
-        "RI"    | "A1234567"      | false
-        "RI"    | "AB12345"       | false
-        "RI"    | "AB123456"      | false
-        "RI"    | "AB1234567"     | false
-        "RI"    | "ABCDEFG"       | false
+        "RI"    | "123456"              | false
+        "RI"    | "1234567"             | true
+        "RI"    | "12345678"            | false
+        "RI"    | "A12345"              | false
+        "RI"    | "A123456"             | true
+        "RI"    | "A1234567"            | false
+        "RI"    | "AB12345"             | false
+        "RI"    | "AB123456"            | false
+        "RI"    | "AB1234567"           | false
+        "RI"    | "ABCDEFG"             | false
 
 
 
