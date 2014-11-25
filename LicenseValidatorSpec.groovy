@@ -561,14 +561,11 @@ class LicenseValidatorSpec extends Specification{
         "TN"    | "ABCDEFGH"            | false
         "TN"    | "ABCDEFGHI"           | false
 
-        "TX"    | "123456"              | false
-        "TX"    | "1234567"             | true
+        "TX"    | "1234567"             | false
         "TX"    | "12345678"            | true
         "TX"    | "123456789"           | false
-        "TX"    | "A123456"             | false
         "TX"    | "A1234567"            | false
         "TX"    | "A12345678"           | false
-        "TX"    | "ABCDEFG"             | false
         "TX"    | "ABCDEFGH"            | false
 
         "UT"    | "123"                 | false
