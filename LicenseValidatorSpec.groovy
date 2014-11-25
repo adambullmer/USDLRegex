@@ -13,51 +13,86 @@ class LicenseValidatorSpec extends Specification{
         where:
 
         state   | number                | passed
-        "AL"    | "1"                   | true
-        "AL"    | "12"                  | true
-        "AL"    | "123"                 | true
-        "AL"    | "1234"                | true
-        "AL"    | "12345"               | true
-        "AL"    | "123456"              | true
+        "AL"    | "123456"              | false
         "AL"    | "1234567"             | true
         "AL"    | "12345678"            | false
-        "AL"    | "A1"                  | false
-        "AL"    | "A12"                 | false
-        "AL"    | "A123"                | false
-        "AL"    | "A1234"               | false
-        "AL"    | "A12345"              | false
         "AL"    | "A123456"             | false
         "AL"    | "A1234567"            | false
-        "AL"    | "A"                   | false
-        "AL"    | "AB"                  | false
-        "AL"    | "ABC"                 | false
-        "AL"    | "ABCD"                | false
-        "AL"    | "ABCDE"               | false
-        "AL"    | "ABCDEF"              | false
         "AL"    | "ABCDEFG"             | false
 
-        "AK"    | "1"                   | true
-        "AK"    | "12"                  | true
-        "AK"    | "123"                 | true
-        "AK"    | "1234"                | true
-        "AK"    | "12345"               | true
-        "AK"    | "123456"              | true
+        "AK"    | "123456"              | false
         "AK"    | "1234567"             | true
         "AK"    | "12345678"            | false
-        "AK"    | "A1"                  | false
-        "AK"    | "A12"                 | false
-        "AK"    | "A123"                | false
-        "AK"    | "A1234"               | false
-        "AK"    | "A12345"              | false
         "AK"    | "A123456"             | false
         "AK"    | "A1234567"            | false
-        "AK"    | "A"                   | false
-        "AK"    | "AB"                  | false
-        "AK"    | "ABC"                 | false
-        "AK"    | "ABCD"                | false
-        "AK"    | "ABCDE"               | false
-        "AK"    | "ABCDEF"              | false
         "AK"    | "ABCDEFG"             | false
+
+        "ME"    | "123456"              | false
+        "ME"    | "1234567"             | true
+        "ME"    | "12345678"            | false
+        "ME"    | "A123456"             | false
+        "ME"    | "A1234567"            | false
+        "ME"    | "ABCDEFG"             | false
+
+
+
+        "AR"    | "12345678"            | false
+        "AR"    | "123456789"           | true
+        "AR"    | "1234567890"          | false
+        "AR"    | "A12345678"           | false
+        "AR"    | "A123456789"          | false
+        "AR"    | "ABCDEFGHI"           | false
+
+        "CO"    | "12345678"            | false
+        "CO"    | "123456789"           | true
+        "CO"    | "1234567890"          | false
+        "CO"    | "A12345678"           | false
+        "CO"    | "A123456789"          | false
+        "CO"    | "ABCDEFGHI"           | false
+
+        "CT"    | "12345678"            | false
+        "CT"    | "123456789"           | true
+        "CT"    | "1234567890"          | false
+        "CT"    | "A12345678"           | false
+        "CT"    | "A123456789"          | false
+        "CT"    | "ABCDEFGHI"           | false
+
+        "GA"    | "12345678"            | false
+        "GA"    | "123456789"           | true
+        "GA"    | "1234567890"          | false
+        "GA"    | "A12345678"           | false
+        "GA"    | "A123456789"          | false
+        "GA"    | "ABCDEFGHI"           | false
+
+        "IA"    | "12345678"            | false
+        "IA"    | "123456789"           | true
+        "IA"    | "1234567890"          | false
+        "IA"    | "A12345678"           | false
+        "IA"    | "A123456789"          | false
+        "IA"    | "ABCDEFGHI"           | false
+
+        "MS"    | "12345678"            | false
+        "MS"    | "123456789"           | true
+        "MS"    | "1234567890"          | false
+        "MS"    | "A12345678"           | false
+        "MS"    | "A123456789"          | false
+        "MS"    | "ABCDEFGHI"           | false
+
+        "NM"    | "12345678"            | false
+        "NM"    | "123456789"           | true
+        "NM"    | "1234567890"          | false
+        "NM"    | "A12345678"           | false
+        "NM"    | "A123456789"          | false
+        "NM"    | "ABCDEFGHI"           | false
+
+        "NY"    | "12345678"            | false
+        "NY"    | "123456789"           | true
+        "NY"    | "1234567890"          | false
+        "NY"    | "A12345678"           | false
+        "NY"    | "A123456789"          | false
+        "NY"    | "ABCDEFGHI"           | false
+
+
 
         "AZ"    | "12345678"            | false
         "AZ"    | "123456789"           | true
@@ -65,50 +100,123 @@ class LicenseValidatorSpec extends Specification{
         "AZ"    | "A1234567"            | false
         "AZ"    | "A12345678"           | true
         "AZ"    | "A123456789"          | false
-        "AZ"    | "AB1"                 | false
-        "AZ"    | "AB12"                | true
-        "AZ"    | "AB123"               | true
-        "AZ"    | "AB1234"              | true
-        "AZ"    | "AB12345"             | true
-        "AZ"    | "AB123456"            | false
         "AZ"    | "AB1234567"           | false
         "AZ"    | "AB12345678"          | false
-        "AZ"    | "ABC1"                | false
-        "AZ"    | "ABC12"               | false
-        "AZ"    | "ABC123"              | false
-        "AZ"    | "ABC1234"             | false
-        "AZ"    | "ABC12345"            | false
-        "AZ"    | "ABC123456"           | false
-        "AZ"    | "ABC1234567"          | false
-        "AZ"    | "ABC12345678"         | false
-        "AZ"    | "ABCD"                | false
-        "AZ"    | "ABCDE"               | false
-        "AZ"    | "ABCDEF"              | false
-        "AZ"    | "ABCDEFG"             | false
-        "AZ"    | "ABCDEFGH"            | false
+        "AZ"    | "AB123456789"         | false
         "AZ"    | "ABCDEFGHI"           | false
 
-        "AR"    | "123"                 | false
-        "AR"    | "1234"                | true
-        "AR"    | "12345"               | true
-        "AR"    | "123456"              | true
-        "AR"    | "1234567"             | true
-        "AR"    | "12345678"            | true
-        "AR"    | "123456789"           | true
-        "AR"    | "1234567890"          | false
-        "AR"    | "A123"                | false
-        "AR"    | "A1234"               | false
-        "AR"    | "A12345"              | false
-        "AR"    | "A123456"             | false
-        "AR"    | "A1234567"            | false
-        "AR"    | "A12345678"           | false
-        "AR"    | "A123456789"          | false
-        "AR"    | "ABCD"                | false
-        "AR"    | "ABCDE"               | false
-        "AR"    | "ABCDEF"              | false
-        "AR"    | "ABCDEFG"             | false
-        "AR"    | "ABCDEFGH"            | false
-        "AR"    | "ABCDEFGHI"           | false
+        "HI"    | "12345678"            | false
+        "HI"    | "123456789"           | true
+        "HI"    | "1234567890"          | false
+        "HI"    | "A1234567"            | false
+        "HI"    | "A12345678"           | true
+        "HI"    | "A123456789"          | false
+        "HI"    | "AB1234567"           | false
+        "HI"    | "AB12345678"          | false
+        "HI"    | "AB123456789"         | false
+        "HI"    | "ABCDEFGHI"           | false
+
+        "KY"    | "12345678"            | false
+        "KY"    | "123456789"           | true
+        "KY"    | "1234567890"          | false
+        "KY"    | "A1234567"            | false
+        "KY"    | "A12345678"           | true
+        "KY"    | "A123456789"          | false
+        "KY"    | "AB1234567"           | false
+        "KY"    | "AB12345678"          | false
+        "KY"    | "AB123456789"         | false
+        "KY"    | "ABCDEFGHI"           | false
+
+        "VA"    | "12345678"            | false
+        "VA"    | "123456789"           | true
+        "VA"    | "1234567890"          | false
+        "VA"    | "A1234567"            | false
+        "VA"    | "A12345678"           | true
+        "VA"    | "A123456789"          | false
+        "VA"    | "AB1234567"           | false
+        "VA"    | "AB12345678"          | false
+        "VA"    | "AB123456789"         | false
+        "VA"    | "ABCDEFGHI"           | false
+
+
+
+        "IN"    | "123456789"           | false
+        "IN"    | "1234567890"          | true
+        "IN"    | "12345678901"         | false
+        "IN"    | "A123456789"          | false
+        "IN"    | "A1234567890"         | false
+        "IN"    | "ABCDEFGHIJ"          | false
+
+        "NV"    | "123456789"           | false
+        "NV"    | "1234567890"          | true
+        "NV"    | "12345678901"         | false
+        "NV"    | "A123456789"          | false
+        "NV"    | "A1234567890"         | false
+        "NV"    | "ABCDEFGHIJ"          | false
+
+
+
+        "FL"    | "123456789012"        | false
+        "FL"    | "1234567890123"       | false
+        "FL"    | "A12345678901"        | false
+        "FL"    | "A123456789012"       | true
+        "FL"    | "A1234567890123"      | false
+        "FL"    | "AB12345678901"       | false
+        "FL"    | "AB123456789012"      | false
+        "FL"    | "ABCDEFGHIJKLM"       | false
+
+        "MD"    | "123456789012"        | false
+        "MD"    | "1234567890123"       | false
+        "MD"    | "A12345678901"        | false
+        "MD"    | "A123456789012"       | true
+        "MD"    | "A1234567890123"      | false
+        "MD"    | "AB12345678901"       | false
+        "MD"    | "AB123456789012"      | false
+        "MD"    | "ABCDEFGHIJKLM"       | false
+
+        "MI"    | "123456789012"        | false
+        "MI"    | "1234567890123"       | false
+        "MI"    | "A12345678901"        | false
+        "MI"    | "A123456789012"       | true
+        "MI"    | "A1234567890123"      | false
+        "MI"    | "AB12345678901"       | false
+        "MI"    | "AB123456789012"      | false
+        "MI"    | "ABCDEFGHIJKLM"       | false
+
+        "MN"    | "123456789012"        | false
+        "MN"    | "1234567890123"       | false
+        "MN"    | "A12345678901"        | false
+        "MN"    | "A123456789012"       | true
+        "MN"    | "A1234567890123"      | false
+        "MN"    | "AB12345678901"       | false
+        "MN"    | "AB123456789012"      | false
+        "MN"    | "ABCDEFGHIJKLM"       | false
+
+
+
+        "OR"    | "123456"        | false
+        "OR"    | "1234567"       | true
+        "OR"    | "12345678"      | false
+        "OR"    | "A12345"        | false
+        "OR"    | "A123456"       | true
+        "OR"    | "A1234567"      | false
+        "OR"    | "AB12345"       | false
+        "OR"    | "AB123456"      | false
+        "OR"    | "AB1234567"     | false
+        "OR"    | "ABCDEFG"       | false
+
+        "RI"    | "123456"        | false
+        "RI"    | "1234567"       | true
+        "RI"    | "12345678"      | false
+        "RI"    | "A12345"        | false
+        "RI"    | "A123456"       | true
+        "RI"    | "A1234567"      | false
+        "RI"    | "AB12345"       | false
+        "RI"    | "AB123456"      | false
+        "RI"    | "AB1234567"     | false
+        "RI"    | "ABCDEFG"       | false
+
+
 
         "CA"    | "1234567"             | false
         "CA"    | "12345678"            | false
@@ -118,41 +226,6 @@ class LicenseValidatorSpec extends Specification{
         "CA"    | "AB123456"            | false
         "CA"    | "AB1234567"           | false
         "CA"    | "ABCDEFGH"            | false
-
-        "CO"    | "12345678"            | false
-        "CO"    | "123456789"           | true
-        "CO"    | "1234567890"          | false
-        "CO"    | "A12"                 | false
-        "CO"    | "A123"                | true
-        "CO"    | "A1234"               | true
-        "CO"    | "A12345"              | true
-        "CO"    | "A123456"             | true
-        "CO"    | "A1234567"            | false
-        "CO"    | "AB1"                 | false
-        "CO"    | "AB12"                | true
-        "CO"    | "AB123"               | true
-        "CO"    | "AB1234"              | true
-        "CO"    | "AB12345"             | true
-        "CO"    | "AB123456"            | false
-        "CO"    | "ABC1"                | false
-        "CO"    | "ABC12"               | false
-        "CO"    | "ABC123"              | false
-        "CO"    | "ABC1234"             | false
-        "CO"    | "ABC12345"            | false
-        "CO"    | "ABC123456"           | false
-        "CO"    | "ABCD"                | false
-        "CO"    | "ABCDE"               | false
-        "CO"    | "ABCDEF"              | false
-        "CO"    | "ABCDEFG"             | false
-        "CO"    | "ABCDEFGH"            | false
-        "CO"    | "ABCDEFGHI"           | false
-
-        "CT"    | "12345678"            | false
-        "CT"    | "123456789"           | true
-        "CT"    | "1234567890"          | false
-        "CT"    | "A12345678"           | false
-        "CT"    | "A123456789"          | false
-        "CT"    | "ABCDEFGHI"           | false
 
         "DE"    | "1"                   | true
         "DE"    | "12"                  | true
@@ -190,39 +263,6 @@ class LicenseValidatorSpec extends Specification{
         "DC"    | "ABCDEFGH"            | false
         "DC"    | "ABCDEFGHI"           | false
 
-        "FL"    | "123456789012"        | false
-        "FL"    | "1234567890123"       | false
-        "FL"    | "A12345678901"        | false
-        "FL"    | "A123456789012"       | true
-        "FL"    | "A1234567890123"      | false
-        "FL"    | "AB12345678901"       | false
-        "FL"    | "AB123456789012"      | false
-        "FL"    | "ABCDEFGHIJKLM"       | false
-
-        "GA"    | "123456"              | false
-        "GA"    | "1234567"             | true
-        "GA"    | "12345678"            | true
-        "GA"    | "123456789"           | true
-        "GA"    | "1234567890"          | false
-        "GA"    | "A123456"             | false
-        "GA"    | "A1234567"            | false
-        "GA"    | "A12345678"           | false
-        "GA"    | "A123456789"          | false
-        "GA"    | "ABCDEFG"             | false
-        "GA"    | "ABCDEFGH"            | false
-        "GA"    | "ABCDEFGHI"           | false
-
-        "HI"    | "12345678"            | false
-        "HI"    | "123456789"           | true
-        "HI"    | "1234567890"          | false
-        "HI"    | "A1234567"            | false
-        "HI"    | "A12345678"           | true
-        "HI"    | "A123456789"          | false
-        "HI"    | "AB1234567"           | false
-        "HI"    | "AB12345678"          | false
-        "HI"    | "AB123456789"         | false
-        "HI"    | "ABCDEFGHI"           | false
-
         "ID"    | "12345678"            | false
         "ID"    | "123456789"           | true
         "ID"    | "1234567890"          | false
@@ -239,170 +279,47 @@ class LicenseValidatorSpec extends Specification{
 
         "IL"    | "12345678901"         | false
         "IL"    | "123456789012"        | false
-        "IL"    | "1234567890123"       | false
         "IL"    | "A1234567890"         | false
         "IL"    | "A12345678901"        | true
-        "IL"    | "A123456789012"       | true
-        "IL"    | "A1234576890123"      | false
+        "IL"    | "A123456789012"       | false
         "IL"    | "AB1234576890"        | false
         "IL"    | "AB12345768901"       | false
-        "IL"    | "AB123457689012"      | false
         "IL"    | "ABCDEFGHIJKL"        | false
-        "IL"    | "ABCDEFGHIJKLM"       | false
-
-        "IN"    | "12345678"            | false
-        "IN"    | "123456789"           | true
-        "IN"    | "1234567890"          | true
-        "IN"    | "12345678901"         | false
-        "IN"    | "A12345678"           | false
-        "IN"    | "A123456789"          | true
-        "IN"    | "A1234567890"         | false
-        "IN"    | "AB12345678"          | false
-        "IN"    | "AB123456789"         | false
-        "IN"    | "ABCDEFGHI"           | false
-        "IN"    | "ABCDEFGHJ"           | false
-
-        "IA"    | "12345678"            | false
-        "IA"    | "123456789"           | true
-        "IA"    | "1234567890"          | false
-        "IA"    | "A12345678"           | false
-        "IA"    | "A123456789"          | false
-        "IA"    | "12AB1234"            | false
-        "IA"    | "123A1234"            | false
-        "IA"    | "123AB123"            | false
-        "IA"    | "123AB1234"           | true
-        "IA"    | "1234AB1234"          | false
-        "IA"    | "123ABC1234"          | false
-        "IA"    | "123AB12345"          | false
-        "IA"    | "ABCDEFGHI"           | false
 
         "KS"    | "12345678"            | false
-        "KS"    | "123456789"           | true
-        "KS"    | "1234567890"          | false
-        "KS"    | "A1234567"            | false
-        "KS"    | "A12345678"           | true
-        "KS"    | "A123456789"          | false
-        "KS"    | "AB1234567"           | false
-        "KS"    | "AB12345678"          | false
-        "KS"    | "1A1A"                | false
-        "KS"    | "AB1A"                | false
-        "KS"    | "A12A"                | false
-        "KS"    | "A1AB"                | false
-        "KS"    | "A1A1"                | false
-        "KS"    | "A1A1A"               | true
-        "KS"    | "AB1A1A"              | false
-        "KS"    | "A12A1A"              | false
-        "KS"    | "A1AB1A"              | false
-        "KS"    | "A1A12A"              | false
-        "KS"    | "A1A1AB"              | false
-        "KS"    | "ABCDE"               | false
-        "KS"    | "ABCDEF"              | false
-        "KS"    | "ABCDEFG"             | false
-        "KS"    | "ABCDEFGH"            | false
-        "KS"    | "ABCDEFGHI"           | false
+        "KS"    | "123456789"           | false
+        "KS"    | "K1234567"            | false
+        "KS"    | "A12345678"           | false
+        "KS"    | "J12345678"           | false
+        "KS"    | "K12345678"           | true
+        "KS"    | "L12345678"           | false
+        "KS"    | "K123456789"          | false
+        "KS"    | "KB1234567"           | false
+        "KS"    | "KB12345678"          | false
+        "KS"    | "KBCDEFGHI"           | false
 
-        "KY"    | "12345678"            | false
-        "KY"    | "123456789"           | true
-        "KY"    | "1234567890"          | false
-        "KY"    | "A1234567"            | false
-        "KY"    | "A12345678"           | true
-        "KY"    | "A123456789"          | true
-        "KY"    | "A1234567890"         | false
-        "KY"    | "AB1234567"           | false
-        "KY"    | "AB12345678"          | false
-        "KY"    | "AB123456789"         | false
-        "KY"    | "ABCDEFGHI"           | false
-        "KY"    | "ABCDEFGHIJ"          | false
-
-        "LA"    | "1"                   | true
-        "LA"    | "12"                  | true
-        "LA"    | "123"                 | true
-        "LA"    | "1234"                | true
-        "LA"    | "12345"               | true
-        "LA"    | "123456"              | true
-        "LA"    | "1234567"             | true
-        "LA"    | "12345678"            | true
-        "LA"    | "123456789"           | true
-        "LA"    | "1234567890"          | false
-        "LA"    | "A123"                | false
-        "LA"    | "A"                   | false
-        "LA"    | "AB"                  | false
-        "LA"    | "ABC"                 | false
-        "LA"    | "ABCD"                | false
-        "LA"    | "ABCDE"               | false
-        "LA"    | "ABCDEF"              | false
-        "LA"    | "ABCDEFG"             | false
-        "LA"    | "ABCDEFGH"            | false
+        "LA"    | "12345678"            | false
+        "LA"    | "123456789"           | false
+        "LA"    | "01234567"            | false
+        "LA"    | "A12345678"           | false
+        "LA"    | "012345678"           | true
+        "LA"    | "Z12345678"           | false
+        "LA"    | "0123456789"          | false
+        "LA"    | "A123456789"          | false
         "LA"    | "ABCDEFGHI"           | false
 
-        "ME"    | "123456"              | false
-        "ME"    | "1234567"             | true
-        "ME"    | "12345678"            | true
-        "ME"    | "123456789"           | false
-        "ME"    | "A123456"             | false
-        "ME"    | "A1234567"            | false
-        "ME"    | "A12345678"           | false
-        "ME"    | "123456A"             | false
-        "ME"    | "1234567A"            | true
-        "ME"    | "12345678A"           | false
-        "ME"    | "123456AB"            | false
-        "ME"    | "1234567AB"           | false
-        "ME"    | "ABCDEFG"             | false
-        "ME"    | "ABCDEFGH"            | false
-
-        "MD"    | "123456789012"        | false
-        "MD"    | "1234567890123"       | false
-        "MD"    | "A12345678901"        | false
-        "MD"    | "A123456789012"       | true
-        "MD"    | "A1234567890123"      | false
-        "MD"    | "AB12345678901"       | false
-        "MD"    | "AB123456789012"      | false
-        "MD"    | "ABCDEFGHIJKLM"       | false
-
         "MA"    | "12345678"            | false
-        "MA"    | "123456789"           | true
-        "MA"    | "1234567890"          | false
+        "MA"    | "123456789"           | false
         "MA"    | "A1234567"            | false
         "MA"    | "A12345678"           | true
         "MA"    | "A123456789"          | false
         "MA"    | "AB1234567"           | false
         "MA"    | "AB12345678"          | false
-        "MA"    | "AB123456789"         | false
         "MA"    | "ABCDEFGHI"           | false
 
-        "MI"    | "1234567890"          | false
-        "MI"    | "12345678901"         | false
-        "MI"    | "123456789012"        | false
-        "MI"    | "1234567890123"       | false
-        "MI"    | "A123456789"          | false
-        "MI"    | "A1234567890"         | true
-        "MI"    | "A12345678901"        | false
-        "MI"    | "A123456789012"       | true
-        "MI"    | "A1234567890123"      | false
-        "MI"    | "AB123456789"         | false
-        "MI"    | "AB1234567890"        | false
-        "MI"    | "AB12345678901"       | false
-        "MI"    | "AB123456789012"      | false
-        "MI"    | "ABCDEFGHIJK"         | false
-        "MI"    | "ABCDEFGHIJKL"        | false
-        "MI"    | "ABCDEFGHIJKLM"       | false
-
-        "MN"    | "123456789012"        | false
-        "MN"    | "1234567890123"       | false
-        "MN"    | "A12345678901"        | false
-        "MN"    | "A123456789012"       | true
-        "MN"    | "A1234567890123"      | false
-        "MN"    | "AB12345678901"       | false
-        "MN"    | "AB123456789012"      | false
-        "MN"    | "ABCDEFGHIJKLM"       | false
-
-        "MS"    | "12345678"            | false
-        "MS"    | "123456789"           | true
-        "MS"    | "1234567890"          | false
-        "MS"    | "A12345678"           | false
-        "MS"    | "A123456789"          | false
-        "MS"    | "ABCDEFGHI"           | false
-
+        "MO"    | "12345"               | false
+        "MO"    | "123456"              | false
+        "MO"    | "1234567"             | false
         "MO"    | "12345678"            | false
         "MO"    | "123456789"           | true
         "MO"    | "1234567890"          | false
@@ -419,24 +336,6 @@ class LicenseValidatorSpec extends Specification{
         "MO"    | "AB1234567"           | false
         "MO"    | "AB12345678"          | false
         "MO"    | "AB123456789"         | false
-        "MO"    | "12345678A"           | false
-        "MO"    | "123456789A"          | true
-        "MO"    | "1234567890A"         | false
-        "MO"    | "1234567AB"           | false
-        "MO"    | "12345678AB"          | true
-        "MO"    | "123456789AB"         | false
-        "MO"    | "1234567ABC"          | false
-        "MO"    | "12345678ABC"         | false
-        "MO"    | "123456789ABC"        | false
-        "MO"    | "123456R"             | false
-        "MO"    | "A12345R"             | false
-        "MO"    | "A123456A"            | false
-        "MO"    | "A123456Q"            | false
-        "MO"    | "A123456R"            | true
-        "MO"    | "A123456S"            | false
-        "MO"    | "AB123456R"           | false
-        "MO"    | "A1234567R"           | false
-        "MO"    | "A123456RR"           | false
         "MO"    | "ABCDEF"              | false
         "MO"    | "ABCDEFG"             | false
         "MO"    | "ABCDEFGH"            | false
@@ -449,75 +348,48 @@ class LicenseValidatorSpec extends Specification{
         "MT"    | "12345678901"         | false
         "MT"    | "123456789012"        | false
         "MT"    | "1234567890123"       | true
-        "MT"    | "12345678901234"      | true
-        "MT"    | "123456789012345"     | false
-        "MT"    | "A1234567"            | false
-        "MT"    | "A12345678"           | true
+        "MT"    | "12345678901234"      | false
+        "MT"    | "A12345678"           | false
         "MT"    | "A123456789"          | false
         "MT"    | "A1234567890"         | false
         "MT"    | "A12345678901"        | false
         "MT"    | "A123456789012"       | false
         "MT"    | "A1234567890123"      | false
-        "MT"    | "A12345678901234"     | false
-        "MT"    | "AB1234567"           | false
-        "MT"    | "AB12345678"          | false
-        "MT"    | "AB123456789"         | false
-        "MT"    | "AB1234567890"        | false
-        "MT"    | "AB12345678901"       | false
-        "MT"    | "AB123456789012"      | false
-        "MT"    | "AB1234567890123"     | false
-        "MT"    | "AB12345678901234"    | false
         "MT"    | "ABCDEFGHI"           | false
         "MT"    | "ABCDEFGHIJ"          | false
         "MT"    | "ABCDEFGHIJK"         | false
         "MT"    | "ABCDEFGHIJKL"        | false
         "MT"    | "ABCDEFGHIJKLM"       | false
-        "MT"    | "ABCDEFGHIJKLMN"      | false
 
-        "NE"    | "1"                   | true
-        "NE"    | "12"                  | true
-        "NE"    | "123"                 | true
-        "NE"    | "1234"                | true
-        "NE"    | "12345"               | true
-        "NE"    | "123456"              | true
-        "NE"    | "1234567"             | true
+        "NE"    | "12"                  | false
+        "NE"    | "123"                 | false
+        "NE"    | "1234"                | false
+        "NE"    | "12345"               | false
+        "NE"    | "123456"              | false
+        "NE"    | "1234567"             | false
         "NE"    | "12345678"            | false
-        "NE"    | "A1"                  | false
+        "NE"    | "123456789"           | false
         "NE"    | "A12"                 | false
-        "NE"    | "A123"                | false
-        "NE"    | "A1234"               | false
-        "NE"    | "A12345"              | false
-        "NE"    | "A123456"             | false
-        "NE"    | "A1234567"            | false
-        "NE"    | "A"                   | false
-        "NE"    | "AB"                  | false
-        "NE"    | "ABC"                 | false
+        "NE"    | "A123"                | true
+        "NE"    | "A1234"               | true
+        "NE"    | "A12345"              | true
+        "NE"    | "A123456"             | true
+        "NE"    | "A1234567"            | true
+        "NE"    | "A12345678"           | true
+        "NE"    | "A123456789"          | false
+        "NE"    | "AB12"                | false
+        "NE"    | "AB123"               | false
+        "NE"    | "AB1234"              | false
+        "NE"    | "AB12345"             | false
+        "NE"    | "AB123456"            | false
+        "NE"    | "AB1234567"           | false
+        "NE"    | "AB12345678"          | false
         "NE"    | "ABCD"                | false
         "NE"    | "ABCDE"               | false
         "NE"    | "ABCDEF"              | false
         "NE"    | "ABCDEFG"             | false
-
-        "NV"    | "12345678"            | false
-        "NV"    | "123456789"           | true
-        "NV"    | "1234567890"          | true
-        "NV"    | "12345678901"         | false
-        "NV"    | "123456789012"        | true
-        "NV"    | "1234567890123"       | false
-        "NV"    | "X1234567"            | false
-        "NV"    | "A12345678"           | false
-        "NV"    | "W12345678"           | false
-        "NV"    | "X12345678"           | true
-        "NV"    | "Y12345678"           | false
-        "NV"    | "X123456789"          | false
-        "NV"    | "X1234567890"         | false
-        "NV"    | "X12345678901"        | false
-        "NV"    | "X123456789012"       | false
-        "NV"    | "AB1234567"           | false
-        "NV"    | "AB12345678"          | false
-        "NV"    | "ABCDEFGHI"           | false
-        "NV"    | "ABCDEFGHIJ"          | false
-        "NV"    | "ABCDEFGHIJK"         | false
-        "NV"    | "ABCDEFGHIJKL"        | false
+        "NE"    | "ABCDEFGH"            | false
+        "NE"    | "ABCDEFGHI"           | false
 
         "NH"    | "123456789"           | false
         "NH"    | "1234567890"          | false
@@ -539,52 +411,6 @@ class LicenseValidatorSpec extends Specification{
         "NJ"    | "AB1234567890123"     | false
         "NJ"    | "AB12345678901234"    | false
         "NJ"    | "ABCDEFGHIJKLMNO"     | false
-
-        "NM"    | "1234567"             | false
-        "NM"    | "12345678"            | true
-        "NM"    | "123456789"           | true
-        "NM"    | "1234567890"          | false
-        "NM"    | "A1234567"            | false
-        "NM"    | "A12345678"           | false
-        "NM"    | "A123456789"          | false
-        "NM"    | "ABCDEFGH"            | false
-        "NM"    | "ABCDEFGHI"           | false
-
-        "NY"    | "1234567"             | false
-        "NY"    | "12345678"            | true
-        "NY"    | "123456789"           | true
-        "NY"    | "1234567890"          | false
-        "NY"    | "12345678901"         | false
-        "NY"    | "123456789012"        | false
-        "NY"    | "1234567890123"       | false
-        "NY"    | "12345678901234"      | false
-        "NY"    | "123456789012345"     | false
-        "NY"    | "1234567890123456"    | true
-        "NY"    | "12345678901234567"   | false
-        "NY"    | "A123456"             | false
-        "NY"    | "A1234567"            | true
-        "NY"    | "A12345678"           | false
-        "NY"    | "A123456789"          | false
-        "NY"    | "A1234567890"         | false
-        "NY"    | "A12345678901"        | false
-        "NY"    | "A123456789012"       | false
-        "NY"    | "A1234567890123"      | false
-        "NY"    | "A12345678901234"     | false
-        "NY"    | "A123456789012345"    | false
-        "NY"    | "A1234567890123456"   | false
-        "NY"    | "A12345678901234567"  | false
-        "NY"    | "A123456789012345678" | true
-        "NY"    | "A1234567890123456789"| false
-        "NY"    | "ABCDEFG"             | false
-        "NY"    | "ABCDEFGH"            | true
-        "NY"    | "ABCDEFGHI"           | false
-        "NY"    | "ABCDEFGHIJ"          | false
-        "NY"    | "ABCDEFGHIJK"         | false
-        "NY"    | "ABCDEFGHIJKL"        | false
-        "NY"    | "ABCDEFGHIJKLM"       | false
-        "NY"    | "ABCDEFGHIJKLMN"      | false
-        "NY"    | "ABCDEFGHIJKLMNO"     | false
-        "NY"    | "ABCDEFGHIJKLMNOP"    | false
 
         "NC"    | "1"                   | true
         "NC"    | "12"                  | true
@@ -641,69 +467,56 @@ class LicenseValidatorSpec extends Specification{
         "ND"    | "ABCD123456"          | false
         "ND"    | "ABCDEFGHI"           | false
 
+        "OH"    | "123456"              | false
         "OH"    | "1234567"             | false
-        "OH"    | "12345678"            | true
-        "OH"    | "123456789"           | false
-        "OH"    | "A123"                | false
-        "OH"    | "A1234"               | true
-        "OH"    | "A12345"              | true
-        "OH"    | "A123456"             | true
-        "OH"    | "A1234567"            | true
-        "OH"    | "A12345678"           | true
-        "OH"    | "A123456789"          | false
-        "OH"    | "AB12"                | false
-        "OH"    | "AB123"               | true
-        "OH"    | "AB1234"              | true
-        "OH"    | "AB12345"             | true
+        "OH"    | "12345678"            | false
+        "OH"    | "A12345"              | false
+        "OH"    | "A123456"             | false
+        "OH"    | "A1234567"            | false
+        "OH"    | "A12345678"           | false
+        "OH"    | "AB12345"             | false
         "OH"    | "AB123456"            | true
-        "OH"    | "AB1234567"           | true
-        "OH"    | "AB12345678"          | false
-        "OH"    | "ABCDE"               | false
-        "OH"    | "ABCDEF"              | false
-        "OH"    | "ABCDEFG"             | false
+        "OH"    | "AB1234567"           | false
         "OH"    | "ABCDEFGH"            | false
-        "OH"    | "ABCDEFGHI"           | false
 
         "OK"    | "12345678"            | false
         "OK"    | "123456789"           | true
-        "OK"    | "1234567890"          | false
+        "OK"    | "12345678901"         | false
         "OK"    | "A12345678"           | false
+        "OK"    | "1234567890"          | true
         "OK"    | "A123456789"          | true
+        "OK"    | "AB12345678"          | true
+        "OK"    | "ABC1234567"          | true
+        "OK"    | "ABCD123456"          | true
+        "OK"    | "ABCDE12345"          | true
+        "OK"    | "ABCDEF1234"          | true
+        "OK"    | "ABCDEFG123"          | true
+        "OK"    | "ABCDEFGH12"          | true
+        "OK"    | "ABCDEFGHI1"          | true
+        "OK"    | "ABCDEFGHIJ"          | true
+        "OK"    | "1ABCDEFGHI"          | true
+        "OK"    | "12ABCDEFGH"          | true
+        "OK"    | "123ABCDEFG"          | true
+        "OK"    | "1234ABCDEF"          | true
+        "OK"    | "12345ABCDE"          | true
+        "OK"    | "123456ABCD"          | true
+        "OK"    | "1234567ABC"          | true
+        "OK"    | "12345678AB"          | true
+        "OK"    | "123456789A"          | true
+        "OK"    | "A1A1A1A1A1"          | true
+        "OK"    | "1A1A1A1A1A"          | true
+        "OK"    | "AB12AB12AB"          | true
+        "OK"    | "12AB12AB12"          | true
+        "OK"    | "ABC123ABC1"          | true
+        "OK"    | "123ABC123A"          | true
+        "OK"    | "ABCD1234AB"          | true
+        "OK"    | "1234ABCD12"          | true
+        "OK"    | "123456789*"          | false
+        "OK"    | "123456789-"          | false
+        "OK"    | "123456789/"          | false
         "OK"    | "A1234567890"         | false
-        "OK"    | "AB1234567"           | false
-        "OK"    | "AB12345678"          | false
-        "OK"    | "AB123456789"         | false
         "OK"    | "ABCDEFGHI"           | false
-        "OK"    | "ABCDEFGHJ"           | false
-
-        "OR"    | "1"                   | true
-        "OR"    | "12"                  | true
-        "OR"    | "123"                 | true
-        "OR"    | "1234"                | true
-        "OR"    | "12345"               | true
-        "OR"    | "123456"              | true
-        "OR"    | "1234567"             | true
-        "OR"    | "12345678"            | true
-        "OR"    | "123456789"           | true
-        "OR"    | "1234567890"          | false
-        "NC"    | "A1"                  | false
-        "NC"    | "A12"                 | false
-        "NC"    | "A123"                | false
-        "NC"    | "A1234"               | false
-        "NC"    | "A12345"              | false
-        "NC"    | "A123456"             | false
-        "NC"    | "A1234567"            | false
-        "NC"    | "A12345678"           | false
-        "NC"    | "A123456789"          | false
-        "NC"    | "A"                   | false
-        "NC"    | "AB"                  | false
-        "NC"    | "ABC"                 | false
-        "NC"    | "ABCD"                | false
-        "NC"    | "ABCDE"               | false
-        "NC"    | "ABCDEF"              | false
-        "NC"    | "ABCDEFG"             | false
-        "NC"    | "ABCDEFGH"            | false
-        "NC"    | "ABCDEFGHI"           | false
+        "OK"    | "ABCDEFGHIJK"         | false
 
         "PA"    | "1234567"             | false
         "PA"    | "12345678"            | true
@@ -712,40 +525,11 @@ class LicenseValidatorSpec extends Specification{
         "PA"    | "A12345678"           | false
         "PA"    | "ABCDEFGH"            | false
 
-        "RI"    | "123456"              | false
-        "RI"    | "1234567"             | true
-        "RI"    | "12345678"            | false
-        "RI"    | "A12345"              | false
-        "RI"    | "A123456"             | true
-        "RI"    | "A1234567"            | false
-        "RI"    | "AB12345"             | false
-        "RI"    | "AB123456"            | false
-        "RI"    | "AB1234567"           | false
-        "RI"    | "ABCDEFG"             | false
-
-        "SC"    | "1234"                | false
-        "SC"    | "12345"               | true
-        "SC"    | "123456"              | true
-        "SC"    | "1234567"             | true
-        "SC"    | "12345678"            | true
-        "SC"    | "123456789"           | true
-        "SC"    | "1234567890"          | true
+        "SC"    | "1234567890"          | false
         "SC"    | "12345678901"         | true
         "SC"    | "123456789012"        | false
-        "SC"    | "A1234"               | false
-        "SC"    | "A12345"              | false
-        "SC"    | "A123456"             | false
-        "SC"    | "A1234567"            | false
-        "SC"    | "A12345678"           | false
-        "SC"    | "A123456789"          | false
         "SC"    | "A1234567890"         | false
         "SC"    | "A12345678901"        | false
-        "SC"    | "ABCDE"               | false
-        "SC"    | "ABCDEF"              | false
-        "SC"    | "ABCDEFG"             | false
-        "SC"    | "ABCDEFGH"            | false
-        "SC"    | "ABCDEFGHI"           | false
-        "SC"    | "ABCDEFGHIJ"          | false
         "SC"    | "ABCDEFGHIJK"         | false
 
         "SD"    | "12345"               | false
@@ -753,25 +537,16 @@ class LicenseValidatorSpec extends Specification{
         "SD"    | "1234567"             | true
         "SD"    | "12345678"            | true
         "SD"    | "123456789"           | true
-        "SD"    | "1234567890"          | true
-        "SD"    | "12345678901"         | false
-        "SD"    | "123456789012"        | true
-        "SD"    | "1234567890123"       | false
+        "SD"    | "1234567890"          | false
         "SD"    | "A12345"              | false
         "SD"    | "A123456"             | false
         "SD"    | "A1234567"            | false
         "SD"    | "A12345678"           | false
         "SD"    | "A123456789"          | false
-        "SD"    | "A1234567890"         | false
-        "SD"    | "A12345678901"        | false
-        "SD"    | "A123456789012"       | false
         "SD"    | "ABCDEF"              | false
         "SD"    | "ABCDEFG"             | false
         "SD"    | "ABCDEFGH"            | false
         "SD"    | "ABCDEFGHI"           | false
-        "SD"    | "ABCDEFGHIJ"          | false
-        "SD"    | "ABCDEFGHIJK"         | false
-        "SD"    | "ABCDEFGHIJKL"        | false
 
         "TN"    | "123456"              | false
         "TN"    | "1234567"             | true
@@ -786,14 +561,11 @@ class LicenseValidatorSpec extends Specification{
         "TN"    | "ABCDEFGH"            | false
         "TN"    | "ABCDEFGHI"           | false
 
-        "TX"    | "123456"              | false
-        "TX"    | "1234567"             | true
+        "TX"    | "1234567"             | false
         "TX"    | "12345678"            | true
         "TX"    | "123456789"           | false
-        "TX"    | "A123456"             | false
         "TX"    | "A1234567"            | false
         "TX"    | "A12345678"           | false
-        "TX"    | "ABCDEFG"             | false
         "TX"    | "ABCDEFGH"            | false
 
         "UT"    | "123"                 | false
@@ -828,71 +600,157 @@ class LicenseValidatorSpec extends Specification{
         "VT"    | "A12345678"           | false
         "VT"    | "123456A"             | false
         "VT"    | "1234567A"            | true
-        "VT"    | "1234567B"            | false
-        "VT"    | "1234567Z"            | false
         "VT"    | "12345678A"           | false
         "VT"    | "1234567"             | false
         "VT"    | "ABCDEFGH"            | false
 
-        "VA"    | "12345678"            | false
-        "VA"    | "123456789"           | true
-        "VA"    | "1234567890"          | false
-        "VA"    | "A12345678"           | false
-        "VA"    | "A123456789"          | true
-        "VA"    | "A1234567890"         | true
-        "VA"    | "A12345678901"        | true
-        "VA"    | "A123456789012"       | false
-        "VA"    | "AB12345678"          | false
-        "VA"    | "AB123456789"         | false
-        "VA"    | "AB1234567890"        | false
-        "VA"    | "AB12345678901"       | false
-        "VA"    | "ABCDEFGHI"           | false
-        "VA"    | "ABCDEFGHIJ"          | false
-        "VA"    | "ABCDEFGHIJK"         | false
-        "VA"    | "ABCDEFGHIJKL"        | false
-
         "WA"    | "12345678901"         | false
-        "WA"    | "ABCDEFGHIJK"         | false
         "WA"    | "123456789012"        | false
-        "WA"    | "1ABCDEFGHIJK"        | false
-        "WA"    | "A12345678901"        | true
-        "WA"    | "A1A1A1A1A1A1"        | true
-        "WA"    | "AB12AB12AB12"        | true
-        "WA"    | "ABC123ABC123"        | true
-        "WA"    | "ABCD1234ABCD"        | true
-        "WA"    | "ABCDEF123456"        | true
-        "WA"    | "A1*A1*A1*A1*"        | true
-        "WA"    | "AB12**AB12**"        | true
-        "WA"    | "ABC123***ABC"        | true
-        "WA"    | "ABCD1234****"        | true
-        "WA"    | "A*1A*1A*1A*1"        | true
-        "WA"    | "AB**12AB**12"        | true
-        "WA"    | "ABC***123ABC"        | true
-        "WA"    | "ABCD****1234"        | true
-        "WA"    | "*12345678901"        | false
-        "WA"    | "*ABCDEFGHIJK"        | false
         "WA"    | "1234567890123"       | false
+        "WA"    | "ABCDEFG12345"        | true
+        "WA"    | "ABCDEFG1234A"        | true
+        "WA"    | "ABCDEFG123A1"        | true
+        "WA"    | "ABCDEFG123AB"        | true
+        "WA"    | "ABCDEF*12345"        | true
+        "WA"    | "ABCDEF*1234A"        | true
+        "WA"    | "ABCDEF*123A1"        | true
+        "WA"    | "ABCDEF*123AB"        | true
+        "WA"    | "ABCD*AB12345"        | true
+        "WA"    | "ABCD*AB1234A"        | true
+        "WA"    | "ABCD*AB123A1"        | true
+        "WA"    | "ABCD*AB123AB"        | true
+        "WA"    | "ABCD*A*12345"        | true
+        "WA"    | "ABCD*A*1234A"        | true
+        "WA"    | "ABCD*A*123A1"        | true
+        "WA"    | "ABCD*A*123AB"        | true
+        "WA"    | "ABC*ABC12345"        | true
+        "WA"    | "ABC*ABC1234A"        | true
+        "WA"    | "ABC*ABC123A1"        | true
+        "WA"    | "ABC*ABC123AB"        | true
+        "WA"    | "ABC*AB*12345"        | true
+        "WA"    | "ABC*AB*1234A"        | true
+        "WA"    | "ABC*AB*123A1"        | true
+        "WA"    | "ABC*AB*123AB"        | true
+        "WA"    | "ABC**AB12345"        | true
+        "WA"    | "ABC**AB1234A"        | true
+        "WA"    | "ABC**AB123A1"        | true
+        "WA"    | "ABC**AB123AB"        | true
+        "WA"    | "ABC**A*12345"        | true
+        "WA"    | "ABC**A*1234A"        | true
+        "WA"    | "ABC**A*123A1"        | true
+        "WA"    | "ABC**A*123AB"        | true
+        "WA"    | "AB*ABCD12345"        | true
+        "WA"    | "AB*ABCD1234A"        | true
+        "WA"    | "AB*ABCD123A1"        | true
+        "WA"    | "AB*ABCD123AB"        | true
+        "WA"    | "AB*ABC*12345"        | true
+        "WA"    | "AB*ABC*1234A"        | true
+        "WA"    | "AB*ABC*123A1"        | true
+        "WA"    | "AB*ABC*123AB"        | true
+        "WA"    | "AB*A*AB12345"        | true
+        "WA"    | "AB*A*AB1234A"        | true
+        "WA"    | "AB*A*AB123A1"        | true
+        "WA"    | "AB*A*AB123AB"        | true
+        "WA"    | "AB*A*A*12345"        | true
+        "WA"    | "AB*A*A*1234A"        | true
+        "WA"    | "AB*A*A*123A1"        | true
+        "WA"    | "AB*A*A*123AB"        | true
+        "WA"    | "AB**ABC12345"        | true
+        "WA"    | "AB**ABC1234A"        | true
+        "WA"    | "AB**ABC123A1"        | true
+        "WA"    | "AB**ABC123AB"        | true
+        "WA"    | "AB**AB*12345"        | true
+        "WA"    | "AB**AB*1234A"        | true
+        "WA"    | "AB**AB*123A1"        | true
+        "WA"    | "AB**AB*123AB"        | true
+        "WA"    | "AB***AB12345"        | true
+        "WA"    | "AB***AB1234A"        | true
+        "WA"    | "AB***AB123A1"        | true
+        "WA"    | "AB***AB123AB"        | true
+        "WA"    | "AB***A*12345"        | true
+        "WA"    | "AB***A*1234A"        | true
+        "WA"    | "AB***A*123A1"        | true
+        "WA"    | "AB***A*123AB"        | true
+        "WA"    | "1ABCDEF12345"        | false
+        "WA"    | "A1ABCDE12345"        | false
+        "WA"    | "AB1ABCD12345"        | false
+        "WA"    | "ABC1ABC12345"        | false
+        "WA"    | "ABCD1AB12345"        | false
+        "WA"    | "ABCDE1A12345"        | false
+        "WA"    | "ABCDEF123456"        | false
+        "WA"    | "ABCDEFGH1234"        | false
+        "WA"    | "ABCDEFG1A123"        | false
+        "WA"    | "ABCDEFG12A12"        | false
+        "WA"    | "*ABCDEF12345"        | false
+        "WA"    | "A*ABCDE12345"        | false
+        "WA"    | "ABCDE*A12345"        | false
+        "WA"    | "ABCDEFG*1234"        | false
+        "WA"    | "ABCDEFG1*123"        | false
+        "WA"    | "ABCDEFG12*12"        | false
+        "WA"    | "ABCDEFG123*4"        | false
+        "WA"    | "ABCDEFG1234*"        | false
+        "WA"    | "1A***A*123AB"        | false
+        "WA"    | "A1***A*123AB"        | false
+        "WA"    | "AB1**A*123AB"        | false
+        "WA"    | "AB*1*A*123AB"        | false
+        "WA"    | "AB**1A*123AB"        | false
+        "WA"    | "AB***1*123AB"        | false
+        "WA"    | "AB***A1234AB"        | false
+        "WA"    | "AB***A*A12AB"        | false
+        "WA"    | "AB***A*1A1AB"        | false
+        "WA"    | "AB***A*12ABC"        | false
+        "WA"    | "*A***A*123AB"        | false
+        "WA"    | "A****A*123AB"        | false
+        "WA"    | "AB*****123AB"        | false
+        "WA"    | "AB***A**12AB"        | false
+        "WA"    | "AB***A*1*1AB"        | false
+        "WA"    | "AB***A*12*AB"        | false
+        "WA"    | "AB***A*123*A"        | false
+        "WA"    | "AB***A*123A*"        | false
+        "WA"    | "-A***A*123AB"        | false
+        "WA"    | "A-***A*123AB"        | false
+        "WA"    | "AB-**A*123AB"        | false
+        "WA"    | "AB*-*A*123AB"        | false
+        "WA"    | "AB**-A*123AB"        | false
+        "WA"    | "AB***-*123AB"        | false
+        "WA"    | "AB***A-123AB"        | false
+        "WA"    | "AB***A*-12AB"        | false
+        "WA"    | "AB***A*1-1AB"        | false
+        "WA"    | "AB***A*12-AB"        | false
+        "WA"    | "AB***A*123-A"        | false
+        "WA"    | "AB***A*123A-"        | false
+        "WA"    | "ABCDEFGHIJK"         | false
+        "WA"    | "ABCDEFGHIJKL"        | false
         "WA"    | "ABCDEFGHIJKLM"       | false
 
         "WV"    | "123456"              | false
-        "WV"    | "1234567"             | true
         "WV"    | "12345678"            | false
-        "WV"    | "A1234"               | false
-        "WV"    | "A12345"              | true
+        "WV"    | "1234567"             | true
         "WV"    | "A123456"             | true
-        "WV"    | "A1234567"            | false
-        "WV"    | "AB1234"              | false
         "WV"    | "AB12345"             | true
-        "WV"    | "AB123456"            | true
-        "WV"    | "AB1234567"           | false
-        "WV"    | "ABC12"               | false
-        "WV"    | "ABC123"              | false
-        "WV"    | "ABC1234"             | false
-        "WV"    | "ABC12345"            | false
-        "WV"    | "ABC123456"           | false
-        "WV"    | "ABC1234567"          | false
+        "WV"    | "ABC1234"             | true
+        "WV"    | "ABCD123"             | true
+        "WV"    | "ABCDE12"             | true
+        "WV"    | "ABCDEF1"             | true
+        "WV"    | "ABCDEFG"             | true
+        "WV"    | "1ABCDEF"             | true
+        "WV"    | "12ABCDE"             | true
+        "WV"    | "123ABCD"             | true
+        "WV"    | "1234ABC"             | true
+        "WV"    | "12345AB"             | true
+        "WV"    | "123456A"             | true
+        "WV"    | "A1A1A1A"             | true
+        "WV"    | "1A1A1A1"             | true
+        "WV"    | "AB12AB1"             | true
+        "WV"    | "12AB12A"             | true
+        "WV"    | "ABC123A"             | true
+        "WV"    | "123ABC1"             | true
+        "WV"    | "123456*"             | false
+        "WV"    | "123456-"             | false
+        "WV"    | "123456/"             | false
+        "WV"    | "A1234567"            | false
+        "WV"    | "A12345678"           | false
         "WV"    | "ABCDEF"              | false
-        "WV"    | "ABCDEFG"             | false
         "WV"    | "ABCDEFGH"            | false
 
         "WI"    | "1234567890123"       | false
@@ -904,11 +762,19 @@ class LicenseValidatorSpec extends Specification{
 
         "WY"    | "12345678"            | false
         "WY"    | "123456789"           | true
-        "WY"    | "1234567890"          | true
-        "WY"    | "12345678901"         | false
+        "WY"    | "1234567890"          | false
+        "WY"    | "1-12345678"          | false
+        "WY"    | "12-1234567"          | false
+        "WY"    | "123-123456"          | false
+        "WY"    | "1234-12345"          | false
+        "WY"    | "12345-1234"          | false
+        "WY"    | "123456-123"          | true
+        "WY"    | "123456A123"          | false
+        "WY"    | "123456*123"          | false
+        "WY"    | "1234567-12"          | false
+        "WY"    | "12345678-1"          | false
         "WY"    | "A12345678"           | false
         "WY"    | "A123456789"          | false
-        "WY"    | "A1234567890"         | false
         "WY"    | "ABCDEFGHI"           | false
         "WY"    | "ABCDEFGHIJ"          | false
 
