@@ -37,7 +37,7 @@ class LicenseValidator {
 
             case 'CA': return licenseNumber.matches(/^[a-zA-Z][0-9]{7}$/) // 1 Alpha + 7 Numeric
             case 'DE': return licenseNumber.matches(/^[0-9]{1,7}$/) // 1-7 Numeric
-            case 'DC': return licenseNumber.matches(/^([0-9]{7})|([0-9]{9})$/) // 7 Numeric or 9 Numeric
+            case 'DC': return licenseNumber.matches(/^([0-9]{7}|[0-9]{9})$/) // 7 Numeric or 9 Numeric
             case 'ID': return licenseNumber.matches(/^([0-9]{9}|[a-zA-Z]{2}[0-9]{6}[a-zA-Z])$/) // 9 Numeric or 2 Alpha + 6 Numeric + 1 Alpha
             case 'IL': return licenseNumber.matches(/^[a-zA-Z][0-9]{11}$/) // 1 Alpha + 11 Numeric
             case 'KS': return licenseNumber.matches(/^K[0-9]{8}$/) // 'K' + 8 Numeric
