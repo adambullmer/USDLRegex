@@ -28,7 +28,7 @@ Below is a callback function for validating a dl field using CodeIgniter's `form
         'CO'=>"^[0-9]{9}$", //9Numeric
         'CT'=>"^[0-9]{9}$", //9Numeric
         'DE'=>"^[0-9]{1,7}$", //1-7Numeric
-        'DC'=>"^(([0-9]{7})|([0-9]{9}))$", //7Numeric or 9Numeric
+        'DC'=>"^(([0-9]{7}|[0-9]{9}))$", //7Numeric or 9Numeric
         'FL'=>"^[a-zA-Z][0-9]{12}$", //1Alpha+12Numeric
         'GA'=>"^[0-9]{9}$", //9Numeric
         'HI'=>"^[a-zA-Z0-9][0-9]{8}$", //1AlphaNumeric+8Numeric
