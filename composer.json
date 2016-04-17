@@ -1,0 +1,14 @@
+{
+    "name": "adambullmer/usdl-regex",
+    "description": "Compiled list of United States Driver License validation regex",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Adam Bullmer",
+            "email": "psycodrumfreak@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.0"
+    }
+}
