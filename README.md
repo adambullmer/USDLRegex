@@ -62,7 +62,7 @@ public function dl_format($string) {
         'IN' => "(^[a-zA-Z]{1}[0-9]{9}$)|(^[0-9]{9,10}$)",
                 // 9 Numeric
                 // 3 Numeric + 2 Alpha + 4 Numeric
-        'IA' => "^[0-9]{9}|([0-9]{3}[a-zA-Z]{2}[0-9]{4}$)",
+        'IA' => "^[0-9]{9}|([0-9]{3}[a-zA-Z]{2}[0-9]{4})$",
                 // 1 Alpha + 1 Numeric + 1 Alpha + 1 Numeric + 1 Alpha
                 // 1 Alpha + 8 Numeric
                 // 9 Numeric
