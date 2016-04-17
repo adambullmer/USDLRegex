@@ -7,7 +7,7 @@ Known to be valid as of 2016-04-16.
 Installation
 ------------
 
-Install with composer: `composer install USDLRegex --save`
+Install with composer: `composer require adambullmer/usdl-regex`
 
 
 Usage
