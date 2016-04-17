@@ -8,6 +8,11 @@
             "email": "psycodrumfreak@gmail.com"
         }
     ],
+    "autoload": {
+        "psr-4": {
+            "USDLRegex\\": "php/"
+        }
+    },
     "require": {
         "php": ">=5.3.0"
     }
