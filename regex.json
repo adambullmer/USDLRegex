@@ -98,7 +98,7 @@
     ]
   },
   "IA": {
-    "rule": "^[0-9]{9}|([0-9]{3}[A-Z]{2}[0-9]{4})$",
+    "rule": "^([0-9]{9}|([0-9]{3}[A-Z]{2}[0-9]{4}))$",
     "description": [
       "9 Numeric",
       "3 Numeric + 2 Alpha + 4 Numeric"
@@ -325,8 +325,7 @@
   "WA": {
     "rule": "^(?=.{12}$)[A-Z]{1,7}[A-Z0-9\\*]{4,11}$",
     "description": [
-      "1-7 Alpha + any combination of Alpha, Numeric,",
-      "* for a total of 12 characters"
+      "1-7 Alpha + any combination of Alpha, Numeric, and * for a total of 12 characters"
     ]
   },
   "WV": {
