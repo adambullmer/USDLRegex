@@ -9,3 +9,4 @@ dependencies:
 test:
     override:
         - ./vendor/bin/phpunit --coverage-text
+        - ./vendor/bin/behat
