@@ -277,7 +277,8 @@
   "PR": {
     "rule": "(^[0-9]{9}$)|(^[0-9]{5,7}$)",
     "description": [
-      "5-7 Numeric or 9 Numeric"
+      "5-7 Numeric",
+      "9 Numeric"
     ]
   },
   "RI": {
