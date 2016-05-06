@@ -70,6 +70,12 @@
       "7-9 Numeric"
     ]
   },
+  "GU" : {
+    "rule": "^[a-zA-Z]{1}[0-9]{14}",
+    "description": [
+      "1 Alpha + 14 Numeric"
+    ]
+  },
   "HI": {
     "rule": "(^[A-Z]{1}[0-9]{8}$)|(^[0-9]{9}$)",
     "description": [
@@ -266,6 +272,13 @@
     "rule": "^[0-9]{8}$",
     "description": [
       "8 Numeric"
+    ]
+  },
+  "PR": {
+    "rule": "(^[0-9]{9}$)|(^[0-9]{5,7}$)",
+    "description": [
+      "5-7 Numeric",
+      "9 Numeric"
     ]
   },
   "RI": {
