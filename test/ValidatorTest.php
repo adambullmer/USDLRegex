@@ -15,20 +15,20 @@ class ValidatorTest extends \PHPUnit_Framework_TestCase {
         $this->assertFalse($validator->verbose);
         $this->assertFalse($validator->caseInsensitive);
         $this->assertEquals(gettype($validator->rules), 'array');
-        $this->assertCount(51, $validator->rules);
+        $this->assertCount(53, $validator->rules);
     }
 
     public function rule_override_params() {
         return array(
-            array(NULL,  FALSE, NULL,  FALSE, NULL, 51, 'TX'),
-            array(TRUE,  TRUE,  NULL,  FALSE, NULL, 51, 'TX'),
-            array(FALSE, FALSE, NULL,  FALSE, NULL, 51, 'TX'),
-            array(NULL,  FALSE, TRUE,  TRUE,  NULL, 51, 'TX'),
-            array(TRUE,  TRUE,  TRUE,  TRUE,  NULL, 51, 'TX'),
-            array(FALSE, FALSE, TRUE,  TRUE,  NULL, 51, 'TX'),
-            array(NULL,  FALSE, FALSE, FALSE, NULL, 51, 'TX'),
-            array(TRUE,  TRUE,  FALSE, FALSE, NULL, 51, 'TX'),
-            array(FALSE, FALSE, FALSE, FALSE, NULL, 51, 'TX'),
+            array(NULL,  FALSE, NULL,  FALSE, NULL, 53, 'TX'),
+            array(TRUE,  TRUE,  NULL,  FALSE, NULL, 53, 'TX'),
+            array(FALSE, FALSE, NULL,  FALSE, NULL, 53, 'TX'),
+            array(NULL,  FALSE, TRUE,  TRUE,  NULL, 53, 'TX'),
+            array(TRUE,  TRUE,  TRUE,  TRUE,  NULL, 53, 'TX'),
+            array(FALSE, FALSE, TRUE,  TRUE,  NULL, 53, 'TX'),
+            array(NULL,  FALSE, FALSE, FALSE, NULL, 53, 'TX'),
+            array(TRUE,  TRUE,  FALSE, FALSE, NULL, 53, 'TX'),
+            array(FALSE, FALSE, FALSE, FALSE, NULL, 53, 'TX'),
             array(NULL,  FALSE, NULL,  FALSE, array('TEST_STATE' => array()), 1, 'TEST_STATE'),
             array(TRUE,  TRUE,  NULL,  FALSE, array('TEST_STATE' => array()), 1, 'TEST_STATE'),
             array(FALSE, FALSE, NULL,  FALSE, array('TEST_STATE' => array()), 1, 'TEST_STATE'),

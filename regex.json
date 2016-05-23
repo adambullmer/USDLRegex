@@ -71,7 +71,7 @@
     ]
   },
   "GU" : {
-    "rule": "^[a-zA-Z]{1}[0-9]{14}",
+    "rule": "^[A-Z]{1}[0-9]{14}$",
     "description": [
       "1 Alpha + 14 Numeric"
     ]
