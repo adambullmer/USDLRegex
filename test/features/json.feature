@@ -107,6 +107,13 @@ Feature: Valid Regex Rules
             | GA    | 1234567890           | FALSE  |
             | GA    | A12345678            | FALSE  |
 
+            | GU    | A12345678901234      | TRUE   |
+            | GU    | AB12345678901234     | FALSE  |
+            | GU    | 12345678901234       | FALSE  |
+            | GU    | 12345678901234A      | FALSE  |
+            | GU    | A1234567890123       | FALSE  |
+            | GU    | A123456789012345     | FALSE  |
+
             | HI    | A12345678            | TRUE   |
             | HI    | A123456789           | FALSE  |
             | HI    | A1234567             | FALSE  |
@@ -457,6 +464,18 @@ Feature: Valid Regex Rules
             | PA    | 12345678A            | FALSE  |
             | PA    | A1234567             | FALSE  |
             | PA    | 1234567A             | FALSE  |
+
+            | PR    | 12345                | TRUE   |
+            | PR    | 123456               | TRUE   |
+            | PR    | 1234567              | TRUE   |
+            | PR    | 12345678             | FALSE  |
+            | PR    | 123456789            | TRUE   |
+            | PR    | 1234567890           | FALSE  |
+            | PR    | 1234                 | FALSE  |
+            | PR    | A12345               | FALSE  |
+            | PR    | 12345A               | FALSE  |
+            | PR    | A123456789           | FALSE  |
+            | PR    | 123456789A           | FALSE  |
 
             | RI    | 1234567              | TRUE   |
             | RI    | 123456               | FALSE  |
