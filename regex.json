@@ -327,8 +327,9 @@
     ]
   },
   "VA": {
-    "rule": "(^[A-Z]{1}[0-9]{9,11}$)|(^[0-9]{9}$)",
+    "rule": "(^[A-Z]{1}[0-9]{8,11}$)|(^[0-9]{9}$)",
     "description": [
+      "1 Alpha + 8 Numeric",
       "1 Alpha + 9 Numeric",
       "1 Alpha + 10 Numeric",
       "1 Alpha + 11 Numeric",
