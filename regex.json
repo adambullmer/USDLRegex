@@ -1,7 +1,7 @@
 {
   "AL": {
     "rule": "^[0-9]{1,7}$",
-    "descriptions": [
+    "description": [
       "1-7 Numeric"
     ]
   },
