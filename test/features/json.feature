@@ -559,7 +559,7 @@ Feature: Valid Regex Rules
             | VA    | A123456789           | TRUE   |
             | VA    | A1234567890          | TRUE   |
             | VA    | A12345678901         | TRUE   |
-            | VA    | A12345678            | FALSE  |
+            | VA    | A12345678            | TRUE   |
             | VA    | A123456789012        | FALSE  |
             | VA    | 123456789A           | FALSE  |
             | VA    | AB123456789          | FALSE  |
