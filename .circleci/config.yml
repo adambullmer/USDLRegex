@@ -3,22 +3,27 @@ defaults: &defaults
   docker:
     - image: circleci/php:7
 
+composer_cache_key: &composer_cache_key composer-dependencies-{{ checksum "composer.lock" }}
+restore_composer_cache: &restore_composer_cache
+  keys:
+    - *composer_cache_key
+composer_install: &composer_install
+  name: install dependencies
+  command: composer install
+save_composer_cache: &save_composer_cache
+  key: *composer_cache_key
+  paths:
+    - ~/.composer/cache/
+
 version: 2
 jobs:
   test_json:
     << : *defaults
     steps:
       - checkout
-      - restore_cache:
-          keys:
-            - composer-dependencies-{{ checksum "composer.lock" }}
-      - run:
-          name: install dependencies
-          command: composer install
-      - save_cache:
-          key: composer-dependencies-{{ checksum "project.clj" }}
-          paths:
-            - ~/.composer/cache/
+      - restore_cache: *restore_composer_cache
+      - run: *composer_install
+      - save_cache: *save_composer_cache
       - run:
           name: run tests
           command: |
@@ -30,16 +35,9 @@ jobs:
     << : *defaults
     steps:
       - checkout
-      - restore_cache:
-          keys:
-            - composer-dependencies-{{ checksum "composer.lock" }}
-      - run:
-          name: install dependencies
-          command: composer install
-      - save_cache:
-          key: composer-dependencies-{{ checksum "project.clj" }}
-          paths:
-            - ~/.composer/cache/
+      - restore_cache: *restore_composer_cache
+      - run: *composer_install
+      - save_cache: *save_composer_cache
       - run:
           name: run tests
           command: |
