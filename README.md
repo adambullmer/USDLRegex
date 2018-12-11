@@ -1,5 +1,8 @@
 US Driver's License Regex Repository
 ====================================
+
+[![codecov](https://codecov.io/gh/adambullmer/USDLRegex/branch/master/graph/badge.svg)](https://codecov.io/gh/adambullmer/USDLRegex)
+
 Sourced from https://ntsi.com/drivers-license-format/
 Known to be valid as of 2016-04-16.
 
