@@ -1,0 +1,59 @@
+defaults: &defaults
+  working_directory: ~/USDLRegex
+  docker:
+    - image: circleci/php:7
+
+version: 2
+jobs:
+  test_json:
+    << : *defaults
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - composer-dependencies-{{ checksum "composer.lock" }}
+      - run:
+          name: install dependencies
+          command: composer install
+      - save_cache:
+          key: composer-dependencies-{{ checksum "project.clj" }}
+          paths:
+            - ~/.composer/cache/
+      - run:
+          name: run tests
+          command: |
+            ./vendor/bin/behat -f pretty,junit --out /dev/stdout,behat --ansi
+      - store_test_results:
+          path: behat
+
+  test_php:
+    << : *defaults
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - composer-dependencies-{{ checksum "composer.lock" }}
+      - run:
+          name: install dependencies
+          command: composer install
+      - save_cache:
+          key: composer-dependencies-{{ checksum "project.clj" }}
+          paths:
+            - ~/.composer/cache/
+      - run:
+          name: run tests
+          command: |
+            mkdir -p phpunit
+            ./vendor/bin/phpunit --coverage-clover=coverage.xml --log-junit=phpunit/junit.xml
+      - run:
+          name: upload coverage
+          command: bash <(curl -s https://codecov.io/bash)
+      - store_test_results:
+          path: phpunit
+
+workflows:
+  version: 2
+  test:
+    jobs:
+      - test_php
+      - test_json
