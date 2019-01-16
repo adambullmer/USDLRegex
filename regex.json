@@ -141,7 +141,7 @@
   "MD": {
     "rule": "^[A-Z]{1}[0-9]{12}$",
     "description": [
-      "1Alpha+12Numeric"
+      "1 Alpha + 12 Numeric"
     ]
   },
   "MA": {
