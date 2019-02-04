@@ -190,9 +190,9 @@
     ]
   },
   "NE": {
-    "rule": "^[0-9]{1,7}$",
+    "rule": "^[A-Z]{1}[0-9]{6,8}$",
     "description": [
-      "1-7 Numeric"
+      "1 Alpha + 6-8 Numeric"
     ]
   },
   "NV": {
