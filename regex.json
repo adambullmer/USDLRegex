@@ -205,9 +205,9 @@
     ]
   },
   "NH": {
-    "rule": "^[0-9]{2}[A-Z]{3}[0-9]{5}$",
+    "rule": "(^[0-9]{2}[A-Z]{3}[0-9]{5}$)|(^[A-Z]{3}[0-9]{8}$)",
     "description": [
-      "2 Numeric + 3 Alpha + 5 Numeric"
+      "2 Numeric + 3 Alpha + 5 Numeric, or 3 Alpha + 8 Numeric"
     ]
   },
   "NJ": {
