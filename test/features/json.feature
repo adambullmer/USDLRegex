@@ -19,7 +19,8 @@ Feature: Valid Regex Rules
             | AL    | 12345                | TRUE   |
             | AL    | 123456               | TRUE   |
             | AL    | 1234567              | TRUE   |
-            | AL    | 12345678             | FALSE  |
+            | AL    | 12345678             | TRUE   |
+            | AL    | 123456789            | FALSE  |
             | AL    | 123456A              | FALSE  |
 
             | AK    | 1                    | TRUE   |
@@ -224,6 +225,7 @@ Feature: Valid Regex Rules
 
             | MA    | A12345678            | TRUE   |
             | MA    | AB12345678           | FALSE  |
+            | MA    | AB1234567            | TRUE   |
             | MA    | A123456789           | FALSE  |
             | MA    | A1234567             | FALSE  |
             | MA    | 123456789            | TRUE   |
@@ -279,6 +281,10 @@ Feature: Valid Regex Rules
             | MO    | 123456789            | TRUE   |
             | MO    | 12345678             | FALSE  |
             | MO    | 1234567890           | FALSE  |
+            | MO    | 123A123456           | TRUE   |
+            | MO    | 123AB23456           | FALSE  |
+            | MO    | 12A123456            | FALSE  |
+            | MO    | 123A1234567          | FALSE  |
 
             | MT    | A12345678            | TRUE   |
             | MT    | A1234567             | FALSE  |
@@ -311,7 +317,9 @@ Feature: Valid Regex Rules
             | NE    | 123456               | TRUE   |
             | NE    | 1234567              | TRUE   |
             | NE    | 12345678             | FALSE  |
-            | NE    | A1234567             | FALSE  |
+            | NE    | A1234567             | TRUE   |
+            | NE    | A12345678            | TRUE   |
+            | NE    | A123456789           | FALSE  |
             | NE    | 1234567A             | FALSE  |
 
             | NV    | 123456789            | TRUE   |
@@ -456,6 +464,13 @@ Feature: Valid Regex Rules
             | OR    | 123456789A           | FALSE  |
             | OR    | A12345678            | FALSE  |
             | OR    | 12345678A            | FALSE  |
+            | OR    | A123456              | TRUE   |
+            | OR    | B123456              | TRUE   |
+            | OR    | C12345               | FALSE  |
+            | OR    | C123456              | FALSE  |
+            | OR    | C1234567             | FALSE  |
+            | OR    | A12345               | FALSE  |
+            | OR    | B1234567             | FALSE  |
 
             | PA    | 12345678             | TRUE   |
             | PA    | 1234567              | FALSE  |
@@ -479,7 +494,8 @@ Feature: Valid Regex Rules
 
             | RI    | 1234567              | TRUE   |
             | RI    | 123456               | FALSE  |
-            | RI    | 12345678             | FALSE  |
+            | RI    | 12345678             | TRUE   |
+            | RI    | 123456789            | FALSE  |
             | RI    | A1234567             | FALSE  |
             | RI    | 1234567A             | FALSE  |
             | RI    | A123456              | TRUE   |
