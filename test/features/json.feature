@@ -462,15 +462,18 @@ Feature: Valid Regex Rules
             | OR    | 1234567890           | FALSE  |
             | OR    | A123456789           | FALSE  |
             | OR    | 123456789A           | FALSE  |
+            | OR    | A1234567             | TRUE   |
             | OR    | A12345678            | FALSE  |
             | OR    | 12345678A            | FALSE  |
             | OR    | A123456              | TRUE   |
+            | OR    | AA123456             | FALSE  |
             | OR    | B123456              | TRUE   |
             | OR    | C12345               | FALSE  |
-            | OR    | C123456              | FALSE  |
-            | OR    | C1234567             | FALSE  |
+            | OR    | C123456              | TRUE   |
+            | OR    | C1234567             | TRUE   |
             | OR    | A12345               | FALSE  |
-            | OR    | B1234567             | FALSE  |
+            | OR    | B1234567             | TRUE   |
+            | OR    | B12345678            | FALSE  |
 
             | PA    | 12345678             | TRUE   |
             | PA    | 1234567              | FALSE  |

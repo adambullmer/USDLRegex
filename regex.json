@@ -70,7 +70,7 @@
       "7-9 Numeric"
     ]
   },
-  "GU" : {
+  "GU": {
     "rule": "^[A-Z]{1}[0-9]{14}$",
     "description": [
       "1 Alpha + 14 Numeric"
@@ -266,11 +266,10 @@
     ]
   },
   "OR": {
-    "rule": "(^[0-9]{1,9}$)|(^[AB][0-9]{6}$)",
+    "rule": "(^[0-9]{1,9}$)|(^[A-Za-z][0-9]{6,7}$)",
     "description": [
       "1-9 Numeric",
-      "A + 6 Numeric",
-      "B + 6 Numeric"
+      "One Alpha + 6-7 Numeric"
     ]
   },
   "PA": {
